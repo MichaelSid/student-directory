@@ -23,3 +23,8 @@ puts "Tyler Rollins"
 puts "Richard Curteis"
 puts "Anna Yanova"
 puts "Andrew Cumine"
+#finally, we print the total.
+print "Overall, we have "
+#it's important that print() doesn't add new line characters.
+print 9
+puts " great students"
