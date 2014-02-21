@@ -24,7 +24,10 @@ puts "Are you sure brother? y/n"
 	while !name.empty? do
 		#add the student hash to the array
 		students << {:name => name, :cohort => cohort, :hobby => hobby, :country => country}
+		if students.length > 1
 		print "Now we have #{students.length} students. \n"
+		else print "Now we have #{students.length} student. \n"
+		end
 		name = gets.chomp
 	
 		if !name.empty?
