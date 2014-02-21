@@ -7,7 +7,7 @@ def input_students
 	#get the first name
 	name = gets.chomp
 	puts "Cohort please?"
-	cohort = gets.chomp
+	cohort = gets.sub("\n"," ")
 puts "Are you sure brother? y/n"
 		sure = gets.chomp
 		if sure == "n"
@@ -57,8 +57,8 @@ puts "Are you sure brother? y/n"
 end
 
 def print_header
-	print "The students of my cohort at Makers Academy \n"
-	print "------------- \n"
+	print "The students of my cohort at Makers Academy \n".center(100)
+	print "------------- \n".center(100)
 end
 
 def print_students(students)
@@ -70,14 +70,25 @@ def print_students(students)
 	end
 end
 
+def print_student_bycohort(students)
+	puts "------------------".center(100)
+	puts "The students sorted by cohort".center(100)
+	sorted = students.sort {|x,y| x[:cohort] <=> y[:cohort]}
+	sorted.each_with_index do |student, index|
+		puts "#{index +1}. #{student[:name]}, #{student[:hobby]}, #{student[:country]}, #{student[:cohort]}".center(100)
+	end
+end
+
+
 def print_footer(names)
-	print "Overall, we have #{names.length} great students \n"
+	print "Overall, we have #{names.length} great students. \n"
 end
 
 #nothing happens until we call the methods
 students = input_students
 print_header
 print_students(students)
+print_student_bycohort(students)
 print_footer(students)
 
 	
