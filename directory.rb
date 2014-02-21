@@ -1,20 +1,56 @@
 #let's put all students into an array
 def input_students
-	print "Please enter the names of the students \n"
-	print "To finish, just hit return twice \n"
+	print "Please enter the name of the students \n"
+	print "To finish, just hit return twice at the name \n"
 	#create an empty array
 	students = []
 	#get the first name
 	name = gets.chomp
+	puts "Cohort please?"
+	cohort = gets.chomp
+puts "Are you sure brother? y/n"
+		sure = gets.chomp
+		if sure == "n"
+			puts "Cohort please?"
+			cohort = gets.chomp
+		elsif cohort.empty?
+		cohort = "unknown"
+	end
+	puts "Hobby?"
+	hobby = gets.chomp
+	puts "Country?"
+	country = gets.chomp
 	#while the name is not empty, repeat this code
 	while !name.empty? do
 		#add the student hash to the array
-		students << {:name => name, :cohort => :november}
+		students << {:name => name, :cohort => cohort, :hobby => hobby, :country => country}
 		print "Now we have #{students.length} students. \n"
 		name = gets.chomp
+	
+		if !name.empty?
+				puts "Cohort please?"
+				cohort = gets.chomp
+				puts "Are you sure brother? y/n"
+				sure = gets.chomp
+			if sure == "n"
+				puts "Cohort please?"
+				cohort = gets.chomp
+			elsif cohort.empty?
+				cohort = "unknown"
+			end
+			puts "Hobby?"
+			hobby = gets.chomp
+			puts "Country?"
+			country = gets.chomp
+		end
 	end
+		
+		
+		
+	
 	#return the array of students
 	students
+
 end
 
 def print_header
@@ -26,7 +62,7 @@ def print_students(students)
 	i = 0
 	while i < students.length
 		student = students[i]
-	  	print "#{student[:name]} (#{student[:cohort]} cohort)\n"
+	  	puts "#{student[:name]}, #{student[:hobby]}, #{student[:country]}, #{student[:cohort]}".center(100) #----> Mario checked and adjusted print to puts which solves .center
 	  	i += 1
 	end
 end
