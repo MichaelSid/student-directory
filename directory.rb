@@ -57,8 +57,8 @@ puts "Are you sure brother? y/n"
 end
 
 def print_header
-	print "The students of my cohort at Makers Academy \n".center(100)
-	print "------------- \n".center(100)
+	puts "The students of my cohort at Makers Academy".center(100)
+	puts "------------- ".center(100)
 end
 
 def print_students(students)
@@ -66,11 +66,11 @@ def print_students(students)
 	i = 0
 	while i < students.length
 		student = students[i]
-	  	puts "#{student[:name]}, #{student[:hobby]}, #{student[:country]}, #{student[:cohort]}".center(100) #----> Mario checked and adjusted print to puts which solves .center
+	  	puts "#{student[:name]}, #{student[:hobby]}, #{student[:country]}, #{student[:cohort]}".center(100) 
 	  	i += 1
 	end
+	else puts "You have no students!"
 end
-else puts "You have no students!"
 end
 
 
