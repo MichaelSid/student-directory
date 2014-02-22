@@ -70,19 +70,20 @@ def print_students(students)
 	  	i += 1
 	end
 end
+else puts "You have no students!"
 end
 
 
-#def print_student_bycohort(students)
-#	if students.lenth > 0
-#	puts "------------------".center(100)
-#	puts "The students sorted by cohort".center(100)
-#	sorted = students.sort {|x,y| x[:cohort] <=> y[:cohort]}
-#	sorted.each_with_index do |student, index|
-#		puts "#{index +1}. #{student[:name]}, #{student[:hobby]}, #{student[:country]}, #{student[:cohort]}".center(100)
-#	end
-#end
-#end
+def print_student_bycohort(students)
+	if students.length > 0
+	puts "------------------".center(100)
+	puts "The students sorted by cohort".center(100)
+	sorted = students.sort {|x,y| x[:cohort] <=> y[:cohort]}
+	sorted.each_with_index do |student, index|
+		puts "#{index +1}. #{student[:name]}, #{student[:hobby]}, #{student[:country]}, #{student[:cohort]}".center(100)
+	end
+end
+end
 
 
 def print_footer(names)
@@ -93,7 +94,7 @@ end
 students = input_students
 print_header
 print_students(students)
-#print_student_bycohort(students)
+print_student_bycohort(students)
 print_footer(students)
 
 	
