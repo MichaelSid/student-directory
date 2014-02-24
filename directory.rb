@@ -30,7 +30,7 @@ puts "Are you sure brother? y/n"
 		end
 		name = gets.chomp
 	
-		if !name.empty?
+		
 				puts "Cohort please?"
 				cohort = gets.chomp
 				puts "Are you sure brother? y/n"
@@ -45,7 +45,7 @@ puts "Are you sure brother? y/n"
 			hobby = gets.chomp
 			puts "Country?"
 			country = gets.chomp
-		end
+		
 	end
 		
 		
